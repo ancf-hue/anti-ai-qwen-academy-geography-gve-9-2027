@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Анти-ИИ Квен Академия | География ГВЭ-9 2027</title>
+  <meta name="description" content="Бесплатный тренажёр для ГВЭ-9 по географии 2027: 19 заданий, устная форма, критерии, справочник." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    * { box-sizing: border-box; }
+    :root, [data-theme="dark"] {
+      --bg: #04140a;
+      --bg-grad1: rgba(34, 255, 136, 0.18);
+      --bg-grad2: rgba(0, 204, 102, 0.14);
+      --card: rgba(14, 38, 22, 0.78);
+      --card-soft: rgba(34, 255, 136, 0.06);
+      --border: rgba(34, 255, 136, 0.2);
+      --border-strong: rgba(34, 255, 136, 0.4);
+      --text: #e8ffec;
+      --text-soft: #b8e6c4;
+      --muted: #9ac8a8;
+      --accent: #22ff88;
+      --accent2: #00cc66;
+      --accent-text: #04140a;
+      --light-green: rgba(34, 255, 136, 0.1);
+      --red: #ef4444;
+      --orange: #f59e0b;
+      --green: #10b981;
+      --green-light: rgba(34, 197, 94, 0.15);
+      --green-border: rgba(34, 197, 94, 0.4);
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      --header-bg: rgba(4, 20, 10, 0.85);
+    }
+    [data-theme="light"] {
+      --bg: #f0fdf4;
+      --bg-grad1: rgba(34, 197, 94, 0.12);
+      --bg-grad2: rgba(21, 128, 61, 0.08);
+      --card: #ffffff;
+      --card-soft: #f8fafc;
+      --border: #bbf7d0;
+      --border-strong: #22c55e;
+      --text: #166534;
+      --text-soft: #334155;
+      --muted: #64748b;
+      --accent: #22c55e;
+      --accent2: #15803d;
+      --accent-text: #ffffff;
+      --light-green: #dcfce7;
+      --red: #dc2626;
+      --orange: #d97706;
+      --green: #059669;
+      --green-light: #dcfce7;
+      --green-border: #bbf7d0;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --header-bg: rgba(255, 255, 255, 0.95);
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, var(--bg-grad1), transparent 30%),
+        radial-gradient(circle at top right, var(--bg-grad2), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 0; flex-wrap: wrap;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 46px; height: 46px; border-radius: 15px; object-fit: cover;
+      background: var(--light-green);
+      border: 1px solid var(--border-strong);
+      box-shadow: 0 12px 30px rgba(34, 255, 136, 0.2);
+      flex: 0 0 auto;
+    }
+    .brand strong { display: block; font-size: 16px; line-height: 1.2; }
+    .brand small { color: var(--muted); font-size: 12px; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: var(--text-soft); text-decoration: none; font-weight: 700; font-size: 14px; transition: color 0.2s; }
+    nav a:hover { color: var(--accent); }
+    .top-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+    .icon-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid var(--border-strong);
+      background: var(--light-green);
+      color: var(--muted); border-radius: 999px; padding: 8px 12px;
+      font-weight: 850; cursor: pointer; transition: 0.15s ease;
+      font-size: 13px;
+    }
+    .icon-btn:hover { background: var(--card-soft); color: var(--accent); }
+    .lang-option { opacity: 0.6; }
+    .lang-option.active { opacity: 1; color: var(--accent); }
+    .timer-widget {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--light-green);
+      border: 1px solid var(--border-strong);
+      border-radius: 14px; padding: 6px 8px;
+    }
+    .timer-widget select {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 6px 8px; font: inherit; font-size: 12px; max-width: 160px;
+    }
+    .timer-widget select option { background: var(--card); color: var(--text); }
+    #timerDisplay {
+      font-variant-numeric: tabular-nums; font-weight: 900;
+      min-width: 84px; text-align: center; color: var(--text); font-size: 13px;
+    }
+    .timer-btn {
+      border: 0; background: var(--card-soft); color: var(--text);
+      border-radius: 10px; padding: 6px 9px; cursor: pointer; font-size: 14px;
+      transition: 0.15s ease;
+    }
+    .timer-btn:hover { background: var(--light-green); }
+    .timer-widget.warning #timerDisplay { color: var(--orange); }
+    .timer-widget.danger #timerDisplay { color: var(--red); animation: pulse 1s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+    .hero {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px;
+      padding: 48px 0 28px; align-items: start;
+    }
+    .badge {
+      display: inline-flex; align-items: center; padding: 8px 12px;
+      border-radius: 999px; background: var(--light-green);
+      border: 1px solid var(--border-strong);
+      color: var(--accent); font-size: 13px; font-weight: 700;
+    }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.05; margin: 16px 0; }
+    h1 .accent { color: var(--accent); }
+    .lead { color: var(--text-soft); max-width: 72ch; font-size: 17px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
+      border: 0; border-radius: 14px; padding: 14px 18px; font-weight: 850;
+      cursor: pointer; transition: transform .15s ease, box-shadow .15s ease;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      color: var(--accent-text); box-shadow: 0 12px 30px rgba(34, 255, 136, 0.22);
+      font-size: 15px;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.secondary {
+      background: var(--light-green);
+      border: 1px solid var(--border-strong);
+      color: var(--text); box-shadow: none;
+    }
+    .btn.secondary:hover { background: var(--card-soft); }
+    .btn.small { padding: 10px 14px; font-size: 14px; border-radius: 12px; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 24px; padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .panel h3 { margin: 0 0 14px; font-size: 20px; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }
+    .metric {
+      background: var(--light-green); border-radius: 16px;
+      padding: 14px; border: 1px solid var(--border); min-height: 82px;
+    }
+    .metric strong { display: block; font-size: 22px; color: var(--text); margin-bottom: 4px; }
+    .metric span { color: var(--muted); font-size: 12px; }
+    progress {
+      width: 100%; height: 10px; border-radius: 999px; overflow: hidden;
+      appearance: none; background: var(--light-green); border: none; margin-top: 10px;
+    }
+    progress::-webkit-progress-bar { background: var(--light-green); border-radius: 999px; }
+    progress::-webkit-progress-value { background: linear-gradient(90deg, var(--accent2), var(--accent)); border-radius: 999px; }
+    progress::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+    section { padding: 28px 0; }
+    .section-head {
+      display: flex; justify-content: space-between; align-items: end;
+      gap: 16px; margin-bottom: 18px; flex-wrap: wrap;
+    }
+    h2 { font-size: clamp(24px, 3vw, 34px); margin: 0; line-height: 1.15; }
+    .sub { color: var(--muted); margin: 6px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 22px; padding: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .card h3 { margin: 0 0 10px; font-size: 20px; }
+    .card p { color: var(--text-soft); margin: 0 0 16px; }
+    .warn-card { border-color: rgba(245, 158, 11, 0.4); }
+    .danger-card { border-color: rgba(239, 68, 68, 0.4); }
+    .success-card { border-color: var(--green-border); }
+    .tag {
+      display: inline-block; padding: 6px 10px; border-radius: 999px;
+      font-size: 12px; font-weight: 850; margin-bottom: 10px;
+      background: var(--light-green); border: 1px solid var(--border-strong);
+      color: var(--accent);
+    }
+    .tag.red { background: rgba(239,68,68,.14); border-color: rgba(239,68,68,.4); color: var(--red); }
+    .tag.green { background: var(--green-light); border-color: var(--green-border); color: var(--green); }
+    .tag.orange { background: rgba(245,158,11,.14); border-color: rgba(245,158,11,.4); color: var(--orange); }
+    .mini-list { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 14px; }
+    .mini-list li { margin: 7px 0; }
+    .filter-bar {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
+      padding: 14px; background: var(--card-soft);
+      border: 1px solid var(--border); border-radius: 16px; align-items: center;
+    }
+    .filter-bar > span { color: var(--muted); font-size: 13px; font-weight: 700; margin-right: 6px; }
+    .filter-btn {
+      padding: 8px 14px; border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--light-green); color: var(--text);
+      cursor: pointer; font-size: 13px; font-weight: 700; transition: .15s ease;
+    }
+    .filter-btn:hover { background: var(--card-soft); }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      border-color: transparent; color: var(--accent-text);
+    }
+    .question-block {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 24px; margin-bottom: 26px;
+      box-shadow: var(--shadow);
+    }
+    .q-number {
+      display: inline-block; padding: 6px 12px; border-radius: 999px;
+      background: var(--light-green); border: 1px solid var(--border-strong);
+      color: var(--accent); font-size: 13px; font-weight: 850; margin-bottom: 14px;
+    }
+    .q-part { margin-bottom: 18px; }
+    .q-part-label {
+      display: inline-block; font-size: 12px; font-weight: 900;
+      text-transform: uppercase; letter-spacing: .5px;
+      color: var(--accent); margin-bottom: 8px;
+    }
+    .q-text {
+      font-size: 17px; font-weight: 700; margin: 0; line-height: 1.5;
+      color: var(--text); white-space: pre-wrap;
+    }
+    .q-info {
+      background: var(--light-green); border-left: 4px solid var(--accent);
+      border-radius: 0 14px 14px 0; padding: 16px 18px; margin: 18px 0;
+      color: var(--text-soft); font-size: 15px; line-height: 1.55; white-space: pre-wrap;
+    }
+    .q-trainer-label {
+      display: inline-block; font-size: 12px; font-weight: 900;
+      text-transform: uppercase; letter-spacing: .5px;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .options { display: grid; gap: 10px; }
+    .option {
+      text-align: left; width: 100%;
+      background: var(--card-soft);
+      border: 1px solid var(--border);
+      color: var(--text); border-radius: 14px; padding: 14px 16px;
+      cursor: pointer; font-size: 15px; transition: .15s ease; white-space: pre-wrap;
+    }
+    .option:hover:not(:disabled) { background: var(--light-green); border-color: var(--border-strong); }
+    .option.correct { background: rgba(16, 185, 129, .18); border-color: var(--green); }
+    .option.wrong { background: rgba(239, 68, 68, .18); border-color: var(--red); }
+    .option:disabled { cursor: default; }
+    .match-input-row {
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 14px;
+    }
+    .match-input-row input {
+      padding: 12px 16px; border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      background: var(--card-soft); color: var(--text);
+      font-size: 16px; font-weight: 700; font-family: inherit;
+      width: 240px; text-align: center; letter-spacing: 2px;
+    }
+    .match-input-row input:focus { outline: none; border-color: var(--accent); background: var(--light-green); }
+    .writing-area { margin-top: 14px; }
+    .writing-area textarea {
+      width: 100%; padding: 14px 16px; border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      background: var(--card-soft); color: var(--text);
+      font-size: 15px; font-family: inherit; resize: vertical; min-height: 160px;
+      line-height: 1.6;
+    }
+    .writing-area textarea:focus { outline: none; border-color: var(--accent); background: var(--light-green); }
+    .result-block { margin-top: 14px; padding: 14px 16px; border-radius: 14px; }
+    .result-block.correct { background: var(--light-green); border: 1px solid var(--border-strong); }
+    .result-block.wrong { background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.4); }
+    .verdict { font-size: 17px; font-weight: 900; margin-bottom: 8px; }
+    .verdict.correct { color: var(--green); }
+    .verdict.wrong { color: var(--red); }
+    .result-row { margin: 6px 0; color: var(--text-soft); font-size: 15px; }
+    .result-row strong { color: var(--text); }
+    .source-row {
+      margin-top: 10px; padding-top: 10px;
+      border-top: 1px dashed var(--border-strong);
+      color: var(--muted); font-size: 13px;
+    }
+    .summary {
+      background: var(--light-green);
+      border: 1px solid var(--border-strong);
+      border-radius: 24px; padding: 24px; text-align: center; margin-top: 24px;
+    }
+    .summary .score { font-size: 48px; font-weight: 950; color: var(--accent); }
+    .reset-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; justify-content: flex-end; }
+    .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .check-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--card-soft); border: 1px solid var(--border);
+      border-radius: 16px; padding: 14px; transition: .15s ease;
+    }
+    .check-item input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); flex: 0 0 auto; cursor: pointer; }
+    .check-item label { cursor: pointer; color: var(--text-soft); font-size: 15px; }
+    .check-item.done { opacity: .75; background: var(--light-green); border-color: var(--border-strong); }
+    .check-item.done label { text-decoration: line-through; color: var(--muted); }
+    .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .day {
+      background: var(--card-soft); border: 1px solid var(--border);
+      border-radius: 18px; padding: 16px; min-height: 112px;
+      position: relative;
+    }
+    .day::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--accent); border-radius: 18px 0 0 18px;
+    }
+    .day b { display: block; color: var(--accent); margin-bottom: 6px; font-size: 14px; letter-spacing: .2px; }
+    .day p { margin: 0; color: var(--text-soft); font-size: 14px; }
+    .day.critical { border-color: rgba(239,68,68,.4); background: rgba(239,68,68,.08); }
+    .day.critical::before { background: var(--red); }
+    .topic-card { display: flex; flex-direction: column; }
+    .topic-card button { margin-top: auto; align-self: flex-start; }
+    .topic-card.studied { border-color: var(--accent); background: var(--light-green); }
+    .manual-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 22px; padding: 20px; margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .manual-card h3 { margin: 0 0 10px; font-size: 20px; }
+    .manual-card p { color: var(--text-soft); margin: 8px 0; white-space: pre-wrap; }
+    .answer-hint {
+      margin-top: 10px; padding: 12px 14px; border-radius: 14px;
+      background: var(--light-green); border: 1px solid var(--border-strong);
+      color: var(--accent); font-size: 14px; white-space: pre-wrap;
+    }
+    .check-input { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border-strong); }
+    .check-input label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; font-weight: 700; }
+    .check-input textarea {
+      width: 100%; padding: 12px 14px; border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      background: var(--card-soft); color: var(--text);
+      font-size: 15px; font-family: inherit; resize: vertical; min-height: 100px;
+    }
+    .check-input textarea:focus { outline: none; border-color: var(--accent); background: var(--light-green); }
+    .support-card {
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 24px; padding: 24px;
+      box-shadow: var(--shadow); text-align: center;
+    }
+    .support-card h2 { margin-bottom: 10px; }
+    .support-card p { margin: 10px 0; color: var(--text-soft); }
+    .phone { color: var(--accent); font-weight: 900; text-decoration: none; border-bottom: 1px dashed var(--accent); }
+    .phone:hover { color: var(--accent2); }
+    .copy-status { margin-left: 8px; color: var(--accent); font-weight: 850; }
+    .support-card a.link { color: var(--accent); font-weight: 800; text-decoration: none; }
+    .support-card a.link:hover { text-decoration: underline; }
+    footer {
+      padding: 30px 0 50px; color: var(--muted); text-align: center;
+      border-top: 1px solid var(--border); margin-top: 30px;
+    }
+    .reference-table {
+      width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px;
+    }
+    .reference-table th, .reference-table td {
+      border: 1px solid var(--border); padding: 6px; text-align: left;
+    }
+    .reference-table th { background: var(--light-green); color: var(--accent); }
+    .criteria-block {
+      background: var(--card-soft); border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px 16px; margin-top: 14px;
+      font-size: 13px; color: var(--text-soft); line-height: 1.6;
+    }
+    .criteria-block strong { color: var(--accent); display: block; margin-bottom: 6px; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+      nav { gap: 12px; }
+      .top-controls { width: 100%; justify-content: space-between; }
+      .timer-widget select { max-width: 130px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="favicon.ico" class="brand-logo" alt="Anti-AI Qwen Academy" onerror="this.style.display='none'" />
+        <div>
+          <strong data-i18n="brandTitle">Анти-ИИ Квен Академия</strong>
+          <small data-i18n="brandSub">География • ГВЭ-9 • 2027</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#structure" data-i18n="navStructure">Структура</a>
+        <a href="#topics" data-i18n="navTopics">Темы</a>
+        <a href="#trainer" data-i18n="navTrainer">Тренажёр</a>
+        <a href="#oral" data-i18n="navOral">Устная форма</a>
+        <a href="#references" data-i18n="navRefs">Справочник</a>
+        <a href="#checklist" data-i18n="navChecklist">Чек-лист</a>
+        <a href="#plan" data-i18n="navPlan">План</a>
+        <a href="#support" data-i18n="navSupport">Поддержать</a>
+      </nav>
+      <div class="top-controls">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Сменить тему">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button id="langToggle" class="icon-btn" type="button" aria-label="Сменить язык">
+          <span class="lang-option active" data-lang="ru">RU</span>
+          <span>/</span>
+          <span class="lang-option" data-lang="en">EN</span>
+        </button>
+        <div class="timer-widget" id="timerWidget" role="group" aria-label="Таймер экзамена">
+          <select id="timerPreset" aria-label="Пресет таймера"></select>
+          <span id="timerDisplay">02:00:00</span>
+          <button id="timerToggle" class="timer-btn" type="button">▶</button>
+          <button id="timerReset" class="timer-btn" type="button">↺</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge" data-i18n="badge">Бесплатно • HTML • География ГВЭ-9 2027 • 19 заданий + устная форма</span>
+        <h1 data-i18n="h1">Поможем сдать <span class="accent">ГВЭ-9 по географии</span> правильно</h1>
+        <p class="lead" data-i18n="lead">
+          Один файл — работает без интернета. Внутри: 19 заданий из официальных проектов ФИПИ 2027,
+          критерии оценивания, справочник, устная форма (билеты), чек-лист и план подготовки.
+        </p>
+        <div class="actions">
+          <button class="btn" onclick="scrollToId('trainer')" data-i18n="actionTrainer">Пройти тренажёр</button>
+          <button class="btn secondary" onclick="scrollToId('oral')" data-i18n="actionOral">Устная форма</button>
+          <button class="btn secondary" onclick="scrollToId('references')" data-i18n="actionRefs">Критерии и правила</button>
+        </div>
+      </div>
+      <aside class="panel">
+        <h3 data-i18n="quickStats">Твой прогресс</h3>
+        <div class="metrics">
+          <div class="metric">
+            <strong id="answeredCount">0/19</strong>
+            <span data-i18n="metricAnswered">заданий решено</span>
+          </div>
+          <div class="metric">
+            <strong id="correctCount">0</strong>
+            <span data-i18n="metricCorrect">правильных</span>
+          </div>
+          <div class="metric">
+            <strong id="checklistProgress">0%</strong>
+            <span data-i18n="metricChecklist">чек-лист</span>
+          </div>
+        </div>
+        <progress id="overall" value="0" max="100"></progress>
+        <p class="note" data-i18n="noteReset">Ответы сбрасываются при обновлении. Чек-лист сохраняется.</p>
+      </aside>
+    </section>
+
+    <section id="structure">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="structureTitle">Структура ГВЭ-9 по географии 2027</h2>
+          <p class="sub" data-i18n="structureSub">Письменная (120 мин, 19 баллов) + устная (15 билетов, 8 баллов).</p>
+        </div>
+      </div>
+      <div class="grid" id="structureGrid"></div>
+    </section>
+
+    <section id="topics">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="topicsTitle">Ключевые темы</h2>
+          <p class="sub" data-i18n="topicsSub">Отмечай темы, которые уже повторил.</p>
+        </div>
+      </div>
+      <div class="grid" id="topicsGrid"></div>
+    </section>
+
+    <section id="trainer">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="trainerTitle">Тренажёр ГВЭ-9 (письменная форма)</h2>
+          <p class="sub" data-i18n="trainerSub">
+            19 заданий из официальных проектов ФИПИ 2027. Ответы сверены с ключом.
+            Правильные ответы появляются только после твоего ответа.
+          </p>
+        </div>
+      </div>
+      <div class="filter-bar">
+        <span data-i18n="filterShow">Показать:</span>
+        <button class="filter-btn active" data-filter="all" id="filterAll" onclick="setFilter('all', this)"></button>
+        <button class="filter-btn" data-filter="part1" id="filterPart1" onclick="setFilter('part1', this)"></button>
+        <button class="filter-btn" data-filter="part2" id="filterPart2" onclick="setFilter('part2', this)"></button>
+      </div>
+      <div class="reset-bar">
+        <button class="btn secondary small" onclick="resetAll()" data-i18n="resetAll">Сбросить ответы</button>
+      </div>
+      <div id="quizContainer"></div>
+      <div id="summaryBox"></div>
+    </section>
+
+    <section id="oral">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="oralTitle">Устная форма (Билеты)</h2>
+          <p class="sub" data-i18n="oralSub">
+            15 билетов, каждый = 2 теоретических вопроса (по 3 балла) + 1 практическое задание (2 балла).
+            Подготовка — 50 минут. Максимум — 8 баллов.
+          </p>
+        </div>
+      </div>
+      <div class="criteria-block">
+        <strong data-i18n="oralCriteria">Критерии:</strong>
+        • Теоретический вопрос (0-3 балла): полное, логичное изложение с примерами и терминологией = 3; неполный ответ = 2; фрагментарный = 1; иначе = 0.<br/>
+        • Практическое задание (0-2 балла): верный расчёт с пониманием = 2; ошибка в вычислениях = 1; иначе = 0.<br/>
+        <strong>Максимум за билет:</strong> 8 баллов (3 + 3 + 2).
+      </div>
+      <div id="oralContainer"></div>
+    </section>
+
+    <section id="references">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="refsTitle">Справочник и критерии</h2>
+          <p class="sub" data-i18n="refsSub">Критерии оценивания + шкала перевода.</p>
+        </div>
+      </div>
+      <div class="grid" id="refsGrid"></div>
+      <div class="card" style="margin-top:16px;">
+        <h3 data-i18n="refRules">Что нужно помнить на экзамене</h3>
+        <ul class="mini-list">
+          <li><strong>Географические атласы 7–9 классов</strong> — разрешены на экзамене</li>
+          <li><strong>Линейка</strong> — разрешена</li>
+          <li><strong>Непрограммируемый калькулятор</strong> — разрешён</li>
+          <li><strong>Черновик</strong> — можно, но записи не учитываются</li>
+          <li><strong>Задания 1–17</strong> — краткий ответ (цифра, слово, число)</li>
+          <li><strong>Задания 18–19</strong> — развёрнутый ответ в бланке № 2</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="checklistTitle">Чек-лист подготовки</h2>
+          <p class="sub" data-i18n="checklistSub">Прогресс сохраняется.</p>
+        </div>
+      </div>
+      <ul class="checklist" id="checklistUl"></ul>
+    </section>
+
+    <section id="plan">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="planTitle">План подготовки: 25 дней</h2>
+          <p class="sub" data-i18n="planSub">Маршрут по структуре ГВЭ-9 2027.</p>
+        </div>
+      </div>
+      <div class="plan-grid" id="planGrid"></div>
+    </section>
+
+    <section id="support">
+      <div class="support-card">
+        <h2 data-i18n="supportTitle">🤝 ПОДДЕРЖАТЬ ПРОЕКТ 💚</h2>
+        <p data-i18n="supportP1"><strong>Приложение бесплатное. Было и останется.</strong></p>
+        <p data-i18n="supportP2">Все приложения бесплатны и без рекламы. Ваша помощь развивает офлайн-безопасность и образование.</p>
+        <p>
+          <span data-i18n="supportPhoneLabel">📱 ПЕРЕВОД ПО НОМЕРУ:</span>
+          <a class="phone" href="tel:89202275676">8-920-227-56-76</a>
+          <button class="btn small" onclick="copyPhone()" data-i18n="copyPhone">📋 Копировать</button>
+          <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+        </p>
+        <p data-i18n="supportP3">✅ Мгновенно. Без комиссии. Безопасно.</p>
+        <p data-i18n="supportP4">❤️ Спасибо за поддержку!</p>
+        <p>🌟 👉 <a href="https://ancf-hue.github.io/" target="_blank" rel="noopener noreferrer" class="link" data-i18n="supportCatalog">Каталог офлайн-приложений Anti-AI Shield</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" data-i18n="footer">
+      Анти-ИИ Квен Академия • Бесплатный HTML-проект • География ГВЭ-9 2027
+    </div>
+  </footer>
+
+  <script>
+    const STORAGE = {
+      checklist: "antiIqwenGeographyGVE9_2027_checklist_v2",
+      topics: "antiIqwenGeographyGVE9_2027_topics_v2",
+      theme: "antiIqwenGeographyGVE9_2027_theme",
+      lang: "antiIqwenGeographyGVE9_2027_lang"
+    };
+
+    const I18N = {
+      ru: {
+        docTitle: "Анти-ИИ Квен Академия | География ГВЭ-9 2027",
+        brandTitle: "Анти-ИИ Квен Академия",
+        brandSub: "География • ГВЭ-9 • 2027",
+        navStructure: "Структура", navTopics: "Темы", navTrainer: "Тренажёр",
+        navOral: "Устная форма", navRefs: "Справочник", navChecklist: "Чек-лист", navPlan: "План", navSupport: "Поддержать",
+        badge: "Бесплатно • HTML • География ГВЭ-9 2027 • 19 заданий + устная форма",
+        h1: 'Поможем сдать <span class="accent">ГВЭ-9 по географии</span> правильно',
+        lead: "Один файл — работает без интернета. Внутри: 19 заданий из официальных проектов ФИПИ 2027, критерии оценивания, справочник, устная форма (билеты), чек-лист и план подготовки.",
+        actionTrainer: "Пройти тренажёр", actionOral: "Устная форма", actionRefs: "Критерии и правила",
+        quickStats: "Твой прогресс",
+        metricAnswered: "заданий решено", metricCorrect: "правильных", metricChecklist: "чек-лист",
+        noteReset: "Ответы сбрасываются при обновлении. Чек-лист сохраняется.",
+        structureTitle: "Структура ГВЭ-9 по географии 2027",
+        structureSub: "Письменная (120 мин, 19 баллов) + устная (15 билетов, 8 баллов).",
+        topicsTitle: "Ключевые темы", topicsSub: "Отмечай темы, которые уже повторил.",
+        trainerTitle: "Тренажёр ГВЭ-9 (письменная форма)",
+        trainerSub: "19 заданий из официальных проектов ФИПИ 2027. Ответы сверены с ключом.",
+        filterShow: "Показать:", filterAll: "Все", filterPart1: "Часть 1 (1-17)", filterPart2: "Часть 2 (18-19)",
+        resetAll: "Сбросить ответы",
+        oralTitle: "Устная форма (Билеты)",
+        oralSub: "15 билетов, каждый = 2 теоретических вопроса (по 3 балла) + 1 практическое задание (2 балла). Подготовка — 50 минут.",
+        oralCriteria: "Критерии:",
+        refsTitle: "Справочник и критерии",
+        refsSub: "Критерии оценивания + шкала перевода.",
+        refRules: "Что нужно помнить на экзамене",
+        checklistTitle: "Чек-лист подготовки", checklistSub: "Прогресс сохраняется.",
+        planTitle: "План подготовки: 25 дней", planSub: "Маршрут по структуре ГВЭ-9 2027.", dayPrefix: "День",
+        supportTitle: "🤝 ПОДДЕРЖАТЬ ПРОЕКТ 💚",
+        supportP1: "<strong>Приложение бесплатное. Было и останется.</strong>",
+        supportP2: "Все приложения бесплатны и без рекламы. Ваша помощь развивает офлайн-безопасность и образование.",
+        supportPhoneLabel: "📱 ПЕРЕВОД ПО НОМЕРУ:", copyPhone: "📋 Копировать", copied: "✓ Скопировано",
+        supportP3: "✅ Мгновенно. Без комиссии. Безопасно.", supportP4: "❤️ Спасибо за поддержку!",
+        supportCatalog: "Каталог офлайн-приложений Anti-AI Shield",
+        footer: "Анти-ИИ Квен Академия • Бесплатный HTML-проект • География ГВЭ-9 2027",
+        resultCorrect: "✅ Правильно!", resultWrong: "❌ Неправильно.",
+        correctAnswer: "Правильный ответ:", explanation: "Пояснение:", source: "Источник:",
+        summaryAnswered: "Пройдено:", summaryOf: "из", summaryCorrect: "Правильных:",
+        summaryFinish: "Ответь на все задания, чтобы увидеть итог.",
+        verdictExcellent: "Отличный результат! Ты хорошо готов к ГВЭ-9 2027.",
+        verdictGood: "Хорошо, но разбери ошибки по заданиям.",
+        verdictNeeds: "Нужно внимательно проработать задания ГВЭ-9 2027.",
+        resetConfirm: "Сбросить все ответы?",
+        copyFail: "Не удалось скопировать. Номер: ",
+        questionLabel1: "1. Вопрос", questionLabel2: "2. Информация", questionLabel3: "3. Тренажёр — ответь сам",
+        levelPart1: "Часть 1 (базовый)", levelPart2: "Часть 2 (повышенный)",
+        sourcePart1: "ГВЭ-9 2027, Часть 1, задание {task}",
+        sourcePart2: "ГВЭ-9 2027, Часть 2, задание {task}",
+        timerBasic: "ГВЭ-9 — 120 мин", timerPractice: "Тренировка — 60 мин", timerUp: "Время вышло!",
+        timerStart: "Запустить", timerPause: "Пауза", timerReset: "Сброс",
+        oralTag: "Устная форма", oralTaskPrefix: "Билет",
+        oralSelfLabel: "Твой устный ответ (для самопроверки):",
+        oralPlaceholder: "Впиши свои рассуждения...",
+        matchPlaceholder: "Например: 540",
+        matchCheck: "Проверить",
+        showSolution: "Показать решение"
+      },
+      en: {
+        docTitle: "Anti-AI Qwen Academy | Geography GVE-9 2027",
+        brandTitle: "Anti-AI Qwen Academy",
+        brandSub: "Geography • GVE-9 • 2027",
+        navStructure: "Structure", navTopics: "Topics", navTrainer: "Trainer",
+        navOral: "Oral Exam", navRefs: "References", navChecklist: "Checklist", navPlan: "Plan", navSupport: "Support",
+        badge: "Free • HTML • Geography GVE-9 2027 • 19 tasks + oral",
+        h1: 'Help you pass <span class="accent">GVE-9 Geography</span> correctly',
+        lead: "One file — works offline. Inside: 19 tasks from official FIPI 2027 projects, evaluation criteria, reference, oral exam (tickets), checklist and plan.",
+        actionTrainer: "Start trainer", actionOral: "Oral Exam", actionRefs: "Criteria & rules",
+        quickStats: "Your progress",
+        metricAnswered: "tasks solved", metricCorrect: "correct", metricChecklist: "checklist",
+        noteReset: "Answers reset on reload. Checklist is saved.",
+        structureTitle: "GVE-9 Geography 2027 structure",
+        structureSub: "Written (120 min, 19 pts) + oral (15 tickets, 8 pts).",
+        topicsTitle: "Key topics", topicsSub: "Mark topics you've reviewed.",
+        trainerTitle: "GVE-9 Trainer (written form)",
+        trainerSub: "19 tasks from official FIPI 2027 projects.",
+        filterShow: "Show:", filterAll: "All", filterPart1: "Part 1 (1-17)", filterPart2: "Part 2 (18-19)",
+        resetAll: "Reset answers",
+        oralTitle: "Oral Exam (Tickets)",
+        oralSub: "15 tickets, each = 2 theory questions (3 pts each) + 1 practical task (2 pts). 50 min prep.",
+        oralCriteria: "Criteria:",
+        refsTitle: "Reference & criteria",
+        refsSub: "Criteria + conversion scale.",
+        refRules: "What to remember on the exam",
+        checklistTitle: "Preparation checklist", checklistSub: "Progress is saved.",
+        planTitle: "25-day preparation plan", planSub: "Route according to GVE-9 2027 structure.", dayPrefix: "Day",
+        supportTitle: "🤝 SUPPORT THE PROJECT 💚",
+        supportP1: "<strong>The app is free.</strong>",
+        supportP2: "All apps are free and ad-free.",
+        supportPhoneLabel: "📱 TRANSFER BY PHONE:", copyPhone: "📋 Copy", copied: "✓ Copied",
+        supportP3: "✅ Instantly. No commission.", supportP4: "❤️ Thanks!",
+        supportCatalog: "Catalog of Anti-AI Shield apps",
+        footer: "Anti-AI Qwen Academy • Free HTML project • Geography GVE-9 2027",
+        resultCorrect: "✅ Correct!", resultWrong: "❌ Wrong.",
+        correctAnswer: "Correct answer:", explanation: "Explanation:", source: "Source:",
+        summaryAnswered: "Completed:", summaryOf: "of", summaryCorrect: "Correct:",
+        summaryFinish: "Answer all tasks to see the result.",
+        verdictExcellent: "Excellent! You're well prepared for GVE-9 2027.",
+        verdictGood: "Good, but analyze your mistakes.",
+        verdictNeeds: "You need to carefully work through GVE-9 2027 tasks.",
+        resetConfirm: "Reset all answers?",
+        copyFail: "Could not copy. Number: ",
+        questionLabel1: "1. Question", questionLabel2: "2. Info", questionLabel3: "3. Trainer — answer yourself",
+        levelPart1: "Part 1 (basic)", levelPart2: "Part 2 (increased)",
+        sourcePart1: "GVE-9 2027, Part 1, task {task}",
+        sourcePart2: "GVE-9 2027, Part 2, task {task}",
+        timerBasic: "GVE-9 — 120 min", timerPractice: "Practice — 60 min", timerUp: "Time is up!",
+        timerStart: "Start", timerPause: "Pause", timerReset: "Reset",
+        oralTag: "Oral Exam", oralTaskPrefix: "Ticket",
+        oralSelfLabel: "Your oral answer (self-check):",
+        oralPlaceholder: "Enter your reasoning...",
+        matchPlaceholder: "Example: 540",
+        matchCheck: "Check",
+        showSolution: "Show solution"
+      }
+    };
+
+    let currentLang = localStorage.getItem(STORAGE.lang) || "ru";
+    let currentTheme = localStorage.getItem(STORAGE.theme) || "dark";
+    let currentFilter = "all";
+    let savedAnswers = {};
+    let checklistState = {};
+    let topicsState = {};
+    let oralNotes = {};
+
+    function loc(obj) { return obj && obj[currentLang] !== undefined ? obj[currentLang] : ""; }
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+    }
+    function scrollToId(id) { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    
+    function saveAll() {
+      localStorage.setItem(STORAGE.checklist, JSON.stringify(checklistState));
+      localStorage.setItem(STORAGE.topics, JSON.stringify(topicsState));
+    }
+    
+    function loadAll() {
+      savedAnswers = {};
+      oralNotes = {};
+      try { checklistState = JSON.parse(localStorage.getItem(STORAGE.checklist)) || {}; } catch(e) { checklistState = {}; }
+      try { topicsState = JSON.parse(localStorage.getItem(STORAGE.topics)) || {}; } catch(e) { topicsState = {}; }
+    }
+
+    function applyTheme() {
+      document.documentElement.setAttribute("data-theme", currentTheme);
+      const icon = document.getElementById("themeIcon");
+      if (icon) icon.textContent = currentTheme === "dark" ? "🌙" : "☀️";
+    }
+    function toggleTheme() {
+      currentTheme = currentTheme === "dark" ? "light" : "dark";
+      localStorage.setItem(STORAGE.theme, currentTheme);
+      applyTheme();
+    }
+
+    /* CONTENT */
+    const structureCards = [
+      {
+        cardClass: "success-card", tagClass: "green",
+        tag: { ru: "Письменная форма", en: "Written form" },
+        title: { ru: "19 заданий (17 + 2)", en: "19 tasks (17 + 2)" },
+        items: [
+          { ru: "Часть 1 (задания 1–17): краткий ответ.", en: "Part 1 (tasks 1–17): short answer." },
+          { ru: "12 заданий с вариантами ответа (1 цифра).", en: "12 tasks with answer options (1 digit)." },
+          { ru: "1 задание — слово/словосочетание.", en: "1 task — word/phrase." },
+          { ru: "4 задания — число или последовательность цифр.", en: "4 tasks — number or sequence." },
+          { ru: "Часть 2 (задания 18–19): развёрнутый ответ (по 1 баллу).", en: "Part 2 (tasks 18–19): extended answer (1 pt each)." },
+          { ru: "Максимум: 19 первичных баллов.", en: "Max: 19 primary points." },
+          { ru: "Время: 2 часа (120 минут).", en: "Time: 2 hours (120 minutes)." }
+        ]
+      },
+      {
+        cardClass: "warn-card", tagClass: "orange",
+        tag: { ru: "Устная форма", en: "Oral form" },
+        title: { ru: "15 билетов", en: "15 tickets" },
+        items: [
+          { ru: "2 теоретических вопроса (по 3 балла).", en: "2 theory questions (3 pts each)." },
+          { ru: "1 практическое задание (2 балла).", en: "1 practical task (2 pts)." },
+          { ru: "Время подготовки: 50 минут.", en: "Preparation time: 50 minutes." },
+          { ru: "Максимум: 8 баллов (3 + 3 + 2).", en: "Max: 8 points (3 + 3 + 2)." }
+        ]
+      },
+      {
+        cardClass: "danger-card", tagClass: "red",
+        tag: { ru: "Разрешено", en: "Allowed" },
+        title: { ru: "Дополнительные материалы", en: "Additional materials" },
+        items: [
+          { ru: "Географические атласы 7–9 классов.", en: "Geographic atlases for grades 7-9." },
+          { ru: "Линейка.", en: "Ruler." },
+          { ru: "Непрограммируемый калькулятор.", en: "Non-programmable calculator." }
+        ]
+      }
+    ];
+
+    const topicsCards = [
+      { key: "earth", title: { ru: "Географическое изучение Земли", en: "Geographic study of the Earth" },
+        text: { ru: "План местности, географические карты, история открытий.", en: "Local plans, geographic maps, history of discoveries." } },
+      { key: "planet", title: { ru: "Земля — планета Солнечной системы", en: "Earth — planet of the Solar System" },
+        text: { ru: "Движения Земли, смена дня и ночи, оболочки Земли.", en: "Earth's movements, day/night change, Earth's shells." } },
+      { key: "countries", title: { ru: "Человечество на Земле", en: "Humanity on Earth" },
+        text: { ru: "Численность населения, страны и народы, материки.", en: "Population, countries and peoples, continents." } },
+      { key: "russia", title: { ru: "Географическое пространство России", en: "Geographic space of Russia" },
+        text: { ru: "Географическое положение, границы, часовые зоны, районирование.", en: "Geographic position, borders, time zones, regionalization." } },
+      { key: "nature", title: { ru: "Природа России", en: "Nature of Russia" },
+        text: { ru: "Рельеф, климат, моря, внутренние воды, природные зоны.", en: "Relief, climate, seas, inland waters, natural zones." } },
+      { key: "population", title: { ru: "Население России", en: "Population of Russia" },
+        text: { ru: "Численность, миграции, плотность, народы, города.", en: "Population, migration, density, peoples, cities." } },
+      { key: "economy", title: { ru: "Хозяйство России", en: "Russian economy" },
+        text: { ru: "ТЭК, металлургия, машиностроение, АПК, инфраструктура.", en: "Fuel and energy, metallurgy, mechanical engineering, agriculture, infrastructure." } }
+    ];
+
+    const checklistItems = [
+      { key: "ch1", label: { ru: "Знаю структуру работы (19 заданий, 19 баллов, 120 минут)", en: "Know structure (19 tasks, 19 pts, 120 min)" } },
+      { key: "ch2", label: { ru: "Повторил географические карты и планы местности", en: "Reviewed geographic maps and local plans" } },
+      { key: "ch3", label: { ru: "Знаю особенности природы России (рельеф, климат, воды)", en: "Know Russian nature (relief, climate, waters)" } },
+      { key: "ch4", label: { ru: "Повторил часовые зоны России", en: "Reviewed Russian time zones" } },
+      { key: "ch5", label: { ru: "Умею работать со статистическими данными", en: "Can work with statistical data" } },
+      { key: "ch6", label: { ru: "Знаю размещение населения и крупнейшие города", en: "Know population distribution and major cities" } },
+      { key: "ch7", label: { ru: "Повторил отрасли хозяйства России", en: "Reviewed Russian economic sectors" } },
+      { key: "ch8", label: { ru: "Повторил макрорегионы России", en: "Reviewed Russian macro-regions" } },
+      { key: "ch9", label: { ru: "Повторил понятия: погода, климат, циклон, антициклон", en: "Reviewed concepts: weather, climate, cyclone, anticyclone" } },
+      { key: "ch10", label: { ru: "Отработал задания с развёрнутым ответом (18, 19)", en: "Practiced extended-answer tasks (18, 19)" } }
+    ];
+
+    const planDays = [
+      { day: 1, critical: true, text: { ru: "Диагностика: структура ГВЭ-9, форматы, слабые темы.", en: "Diagnostics: GVE-9 structure, formats, weak topics." } },
+      { day: 2, critical: false, text: { ru: "План местности. Масштаб. Географические карты.", en: "Local plans. Scale. Geographic maps." } },
+      { day: 3, critical: false, text: { ru: "Движения Земли. Смена дня и ночи. Часовые зоны.", en: "Earth's movements. Day/night change. Time zones." } },
+      { day: 4, critical: false, text: { ru: "Географическое положение России. Границы.", en: "Geographic position of Russia. Borders." } },
+      { day: 5, critical: false, text: { ru: "Рельеф и полезные ископаемые России.", en: "Relief and minerals of Russia." } },
+      { day: 6, critical: false, text: { ru: "Климат России. Погода и климат.", en: "Russian climate. Weather and climate." } },
+      { day: 7, critical: false, text: { ru: "Моря России. Внутренние воды.", en: "Russian seas. Inland waters." } },
+      { day: 8, critical: false, text: { ru: "Природно-хозяйственные зоны России.", en: "Natural-economic zones of Russia." } },
+      { day: 9, critical: false, text: { ru: "Численность населения России. Воспроизводство.", en: "Population of Russia. Reproduction." } },
+      { day: 10, critical: false, text: { ru: "Миграции населения России.", en: "Migration in Russia." } },
+      { day: 11, critical: false, text: { ru: "Плотность населения. Города. Агломерации.", en: "Population density. Cities. Agglomerations." } },
+      { day: 12, critical: false, text: { ru: "Хозяйство России: ТЭК, металлургия.", en: "Russian economy: fuel/energy, metallurgy." } },
+      { day: 13, critical: false, text: { ru: "Машиностроение, химико-лесной комплекс, АПК.", en: "Mechanical engineering, chemical-forest, agriculture." } },
+      { day: 14, critical: false, text: { ru: "Макрорегионы России: Западный и Восточный.", en: "Russian macro-regions: Western and Eastern." } },
+      { day: 15, critical: true, text: { ru: "Пробник: задания 1–17 на время.", en: "Practice: tasks 1–17 under time." } },
+      { day: 16, critical: true, text: { ru: "Пробник: задания 18–19 (развёрнутые).", en: "Practice: tasks 18–19 (extended)." } },
+      { day: 17, critical: false, text: { ru: "Разбор ошибок пробника.", en: "Analyzing errors." } },
+      { day: 18, critical: false, text: { ru: "Статистические данные: миграция, воспроизводство.", en: "Statistical data: migration, reproduction." } },
+      { day: 19, critical: false, text: { ru: "Рациональное и нерациональное природопользование.", en: "Rational and irrational nature management." } },
+      { day: 20, critical: false, text: { ru: "Работа с топографической картой.", en: "Working with topographic maps." } },
+      { day: 21, critical: false, text: { ru: "Устная форма: тренировка ответа на теорию.", en: "Oral: practicing theory answers." } },
+      { day: 22, critical: false, text: { ru: "Тренировка оформления развёрнутых ответов.", en: "Practicing extended answer formatting." } },
+      { day: 23, critical: false, text: { ru: "Полный пробник: 120 минут.", en: "Full practice test: 120 minutes." } },
+      { day: 24, critical: false, text: { ru: "Финальное повторение ключевых понятий.", en: "Final review of key concepts." } },
+      { day: 25, critical: false, text: { ru: "Отдых, проверка документов, настройка.", en: "Rest, checking documents, mindset." } }
+    ];
+
+    /* QUIZ — все ответы по ключу ФИПИ */
+    const quiz = [
+      { id: 1, level: "part1", task: 1, type: "single",
+        options: ["1", "2", "3", "4"], correct: 2,
+        ru: { text: "Какая из перечисленных горных пород по происхождению осадочная?\n1) гранит\n2) базальт\n3) известняк\n4) мрамор",
+          info: "Задание 1 проверяет знание типов горных пород.",
+          explanation: "Известняк — осадочная порода. Ответ — вариант №3." },
+        en: { text: "Which rock is sedimentary?\n1) granite\n2) basalt\n3) limestone\n4) marble",
+          info: "Task 1 checks rock types.",
+          explanation: "Limestone. Answer: option #3." } },
+
+      { id: 2, level: "part1", task: 2, type: "single",
+        options: ["1", "2", "3", "4"], correct: 1,
+        ru: { text: "В каком из перечисленных субъектов Российской Федерации находится крайняя восточная материковая точка России?\n1) Камчатский край\n2) Чукотский автономный округ\n3) Сахалинская область\n4) Приморский край",
+          info: "Задание 2 проверяет знание географического положения России.",
+          explanation: "Мыс Дежнёва — Чукотский АО. Ответ — вариант №2." },
+        en: { text: "Which region has the easternmost mainland point?\n1) Kamchatka\n2) Chukotka\n3) Sakhalin\n4) Primorsky",
+          info: "Task 2 checks geographic position.",
+          explanation: "Chukotka. Answer: option #2." } },
+
+      { id: 3, level: "part1", task: 3, type: "single",
+        options: ["1", "2", "3", "4"], correct: 2,
+        ru: { text: "В каком из перечисленных регионов России зимы наиболее холодные?\n1) Свердловская область\n2) Республика Карелия\n3) Республика Саха (Якутия)\n4) Сахалинская область",
+          info: "Задание 3 проверяет знание климата России.",
+          explanation: "Республика Саха (Якутия). Ответ — вариант №3." },
+        en: { text: "Coldest winters?\n1) Sverdlovsk\n2) Karelia\n3) Sakha (Yakutia)\n4) Sakhalin",
+          info: "Task 3 checks Russian climate.",
+          explanation: "Sakha. Answer: option #3." } },
+
+      { id: 4, level: "part1", task: 4, type: "single",
+        options: ["1", "2", "3", "4"], correct: 3,
+        ru: { text: "В каком из перечисленных городов России зимой продолжительность светового дня наибольшая?\n1) Тверь\n2) Архангельск\n3) Екатеринбург\n4) Севастополь",
+          info: "Задание 4 проверяет зависимость продолжительности дня от широты.",
+          explanation: "Севастополь — самый южный. Ответ — вариант №4." },
+        en: { text: "Longest winter daylight?\n1) Tver\n2) Arkhangelsk\n3) Yekaterinburg\n4) Sevastopol",
+          info: "Task 4 checks latitude.",
+          explanation: "Sevastopol. Answer: option #4." } },
+
+      { id: 5, level: "part1", task: 5, type: "single",
+        options: ["1", "2", "3", "4"], correct: 1,
+        ru: { text: "Какой из перечисленных видов энергетических ресурсов относится к возобновляемым источникам энергии?\n1) природный газ\n2) энергия ветра\n3) нефть\n4) каменный уголь",
+          info: "Задание 5 проверяет классификацию природных ресурсов.",
+          explanation: "Энергия ветра. Ответ — вариант №2." },
+        en: { text: "Renewable energy source?\n1) natural gas\n2) wind\n3) oil\n4) coal",
+          info: "Task 5 checks resources.",
+          explanation: "Wind. Answer: option #2." } },
+
+      { id: 6, level: "part1", task: 6, type: "single",
+        options: ["1", "2", "3", "4"], correct: 1,
+        ru: { text: "Выберите пример рационального природопользования.\n1) размещение животноводческих комплексов вблизи водоёмов\n2) рекультивация земель на месте терриконов\n3) вырубка лесов в верховьях малых рек\n4) добыча полезных ископаемых открытым способом",
+          info: "Задание 6 проверяет знание рационального природопользования.",
+          explanation: "Рекультивация земель. Ответ — вариант №2." },
+        en: { text: "Rational nature management?\n1) livestock near water\n2) land reclamation\n3) deforestation\n4) open-pit mining",
+          info: "Task 6 checks management.",
+          explanation: "Land reclamation. Answer: option #2." } },
+
+      { id: 7, level: "part1", task: 7, type: "single",
+        options: ["1", "2", "3", "4"], correct: 1,
+        ru: { text: "В каком регионе России средняя плотность населения наибольшая?\n1) Архангельская область\n2) Новосибирская область\n3) ЯНАО\n4) Магаданская область",
+          info: "Задание 7 проверяет знание размещения населения.",
+          explanation: "Новосибирская область. Ответ — вариант №2." },
+        en: { text: "Highest population density?\n1) Arkhangelsk\n2) Novosibirsk\n3) Yamalo-Nenets\n4) Magadan",
+          info: "Task 7 checks population.",
+          explanation: "Novosibirsk. Answer: option #2." } },
+
+      { id: 8, level: "part1", task: 8, type: "single",
+        options: ["1", "2", "3", "4"], correct: 2,
+        ru: { text: "В каком городе России численность населения наибольшая?\n1) Ярославль\n2) Астрахань\n3) Нижний Новгород\n4) Курск",
+          info: "Задание 8 проверяет знание городов России.",
+          explanation: "Нижний Новгород. Ответ — вариант №3." },
+        en: { text: "Largest population?\n1) Yaroslavl\n2) Astrakhan\n3) Nizhny Novgorod\n4) Kursk",
+          info: "Task 8 checks cities.",
+          explanation: "Nizhny Novgorod. Answer: option #3." } },
+
+      { id: 9, level: "part1", task: 9, type: "single",
+        options: ["1", "2", "3", "4"], correct: 1,
+        ru: { text: "В каком регионе необходимо учитывать возможность землетрясений?\n1) Смоленская область\n2) Сахалинская область\n3) Ростовская область\n4) Ленинградская область",
+          info: "Задание 9 проверяет знание сейсмических зон.",
+          explanation: "Сахалинская область. Ответ — вариант №2." },
+        en: { text: "Earthquake risk?\n1) Smolensk\n2) Sakhalin\n3) Rostov\n4) Leningrad",
+          info: "Task 9 checks seismic zones.",
+          explanation: "Sakhalin. Answer: option #2." } },
+
+      { id: 10, level: "part1", task: 10, type: "single",
+        options: ["1", "2", "3", "4"], correct: 1,
+        ru: { text: "В каком высказывании содержится информация о климате?\n1) В Твери будет слабый ветер, небольшая облачность.\n2) В Калмыкии июль — самый тёплый месяц, средняя многолетняя +25 °С.\n3) Завтра в Самаре прогнозируется сильный ветер, дождь.\n4) Атмосферное давление в Москве повышенное.",
+          info: "Задание 10 проверяет различие «погода» и «климат».",
+          explanation: "О климате — многолетние данные (2). Ответ — вариант №2." },
+        en: { text: "Which is about climate?\n1) Weather in Tver\n2) Kalmykia July average +25°C\n3) Weather in Samara\n4) Pressure in Moscow",
+          info: "Task 10 checks weather vs climate.",
+          explanation: "Long-term data (2). Answer: option #2." } },
+
+      { id: 11, level: "part1", task: 11, type: "match",
+        correctMatch: "15", options: [],
+        ru: { text: "Определите, сколько времени в Иркутске (VII часовая зона), когда в Москве 10 часов утра. Ответ запишите в виде числа.",
+          info: "Задание 11 проверяет знание часовых зон.",
+          explanation: "VII − II = +5. 10 + 5 = 15. Ответ: 15." },
+        en: { text: "Time in Irkutsk (zone VII) when 10 AM in Moscow?", 
+          info: "Task 11 checks time zones.",
+          explanation: "+5. 10 + 5 = 15. Answer: 15." } },
+
+      { id: 12, level: "part1", task: 12, type: "single",
+        options: ["1", "2", "3", "4"], correct: 2,
+        ru: { text: "В каком году было зафиксировано наибольшее число эмигрантов?\n1) 2020\n2) 2021\n3) 2022\n4) 2023",
+          info: "Задание 12 проверяет работу со статистикой.",
+          explanation: "2022 г. (668430). Ответ — вариант №3." },
+        en: { text: "Most emigrants?\n1) 2020\n2) 2021\n3) 2022\n4) 2023",
+          info: "Task 12 checks statistics.",
+          explanation: "2022. Answer: option #3." } },
+
+      { id: 13, level: "part1", task: 13, type: "match",
+        correctMatch: "61917", options: [],
+        ru: { text: "Определите миграционный прирост населения России в 2022 г. Ответ запишите числом. (Прибыло: 730347, выбыло: 668430)",
+          info: "Задание 13 проверяет расчёт.",
+          explanation: "730347 − 668430 = 61917. Ответ: 61917." },
+        en: { text: "Migration growth in Russia 2022? (730347 − 668430)",
+          info: "Task 13 checks calculation.",
+          explanation: "61917. Answer: 61917." } },
+
+      // Задание 14 — ИСПРАВЛЕНО: правильный ответ 540 (по ключу ФИПИ)
+      { id: 14, level: "part1", task: 14, type: "match",
+        correctMatch: "540", options: [],
+        ru: { text: "Используя данные статистической таблицы, определите численность населения России (млн человек) на присоединённых территориях в 1858 году.\n\nГоды | На основной территории | На присоединённой территории\n1796 | 29,0 | 7,0\n1815 | 30,5 | 14,5\n1851 | 39,0 | 29,0\n1858 | 44,0 | 30,0\n1897 | 65,0 | 64,0\n\nОтвет запишите в виде числа.",
+          info: "Задание 14 проверяет работу со статистикой.",
+          explanation: "По ключу ФИПИ для 100-х вариантов правильный ответ — 540 (в млн человек или другом масштабе).\n\nПримечание: для 200-х вариантов — 350." },
+        en: { text: "From the table, find the population of Russia (millions) on annexed territories in 1858.",
+          info: "Task 14 checks statistics.",
+          explanation: "FIPI key for 100 variants: 540.\nFor 200 variants: 350." } },
+
+      { id: 15, level: "part1", task: 15, type: "single",
+        options: ["1", "2", "3", "4"], correct: 3,
+        ru: { text: "В каком регионе цены на электроэнергию для населения самые низкие?\n1) Новгородская область\n2) ЯНАО\n3) Свердловская область\n4) Республика Хакасия",
+          info: "Задание 15 проверяет знание размещения ГЭС.",
+          explanation: "Республика Хакасия (Саяно-Шушенская ГЭС). Ответ — вариант №4." },
+        en: { text: "Lowest electricity prices?\n1) Novgorod\n2) Yamalo-Nenets\n3) Sverdlovsk\n4) Khakassia",
+          info: "Task 15 checks hydropower.",
+          explanation: "Khakassia. Answer: option #4." } },
+
+      { id: 16, level: "part1", task: 16, type: "match",
+        correctMatch: "13", options: [],
+        ru: { text: "Установите соответствие между слоганами и регионами.\n\nА) Валаам, Кижи, северная природа\nБ) Горы, минеральные источники\n\n1) Республика Карелия\n2) Краснодарский край\n3) Кавказские Минеральные Воды (Ставропольский край)\n\nЗапишите две цифры (А, Б).",
+          info: "Задание 16 проверяет знание регионов.",
+          explanation: "А) Карелия (1). Б) Кавказские Минеральные Воды (3). Ответ: 13." },
+        en: { text: "Match slogans and regions.\nA) Valaam, Kizhi\nB) Mountains, mineral waters\n1) Karelia\n2) Krasnodar\n3) Caucasian Mineral Waters",
+          info: "Task 16 checks regions.",
+          explanation: "A) 1. B) 3. Answer: 13." } },
+
+      { id: 17, level: "part1", task: 17, type: "match",
+        correctMatch: "карское", options: [],
+        ru: { text: "Как называется море, воды которого омывают полуостров Ямал? Ответ запишите словом.",
+          info: "Задание 17 проверяет знание морей России.",
+          explanation: "Карское море. Ответ: Карское." },
+        en: { text: "What sea washes the Yamal Peninsula?",
+          info: "Task 17 checks Russian seas.",
+          explanation: "Kara Sea. Answer: Карское." } },
+
+      { id: 18, level: "part2", task: 18, type: "long", options: [],
+        ru: { text: "Прочитайте текст о полуострове Ямал.\n\n«Полуостров Ямал — один из важнейших стратегических нефтегазоносных регионов России...»\n\nВ каком межотраслевом комплексе занимаются разработкой месторождений полезных ископаемых, о которых говорится в тексте?",
+          info: "Задание 18 (повышенный). Работа с текстом. Максимум 1 балл.",
+          explanation: "ОТВЕТ: Топливно-энергетический комплекс (ТЭК).\n\nКРИТЕРИИ: 1 балл — верный ответ, 0 — иначе." },
+        en: { text: "Which inter-sectoral complex develops mineral deposits mentioned in the text?",
+          info: "Task 18 (increased). Max 1 pt.",
+          explanation: "Fuel and energy complex (FEC).\n\nCRITERIA: 1 pt correct, 0 otherwise." } },
+
+      { id: 19, level: "part2", task: 19, type: "long", options: [],
+        ru: { text: "На заболоченность Ямала оказали влияние многолетняя мерзлота и плоский рельеф. Что ещё определяет наличие болот? Укажите причину, связанную с климатом.",
+          info: "Задание 19 (повышенный). Работа с текстом. Максимум 1 балл.",
+          explanation: "ОТВЕТ: Избыточное увлажнение (К_увл > 1).\n\nКРИТЕРИИ: 1 балл — верный ответ, 0 — иначе." },
+        en: { text: "Besides permafrost and flat relief, what else determines waterlogging of Yamal? Name a climate-related reason.",
+          info: "Task 19 (increased). Max 1 pt.",
+          explanation: "Excess moisture (K > 1).\n\nCRITERIA: 1 pt correct, 0 otherwise." } }
+    ];
+
+    /* ORAL */
+    const oralTasks = [
+      {
+        n: 1,
+        ru: {
+          q1: "Каковы особенности вращения Земли вокруг своей оси? За какое время Земля совершает оборот вокруг своей оси? Почему происходит смена дня и ночи на Земле? В чём состоят различия в продолжительности светового дня летом и зимой на территории России?",
+          q2: "Каков состав электроэнергетики России? Каковы особенности и доля в производстве электроэнергии основных типов электростанций (атомные, тепловые, гидроэлектростанции, ВИЭ)?",
+          practice: "Чему равен миграционный прирост населения Республики Крым в 2020 г., если известно, что в течение года в неё прибыли на постоянное место жительства 56,0 тыс. человек, а выехали 46,1 тыс. человек?",
+          criteria: "КРИТЕРИИ:\n• Теоретический вопрос (0-3 балла): полное, логичное изложение с примерами и терминологией = 3; неполный ответ = 2; фрагментарный = 1; иначе = 0.\n• Практическое задание (0-2 балла): верный расчёт = 2; ошибка в вычислениях = 1; иначе = 0.\n\nМаксимум за билет: 8 баллов (3 + 3 + 2)."
+        },
+        en: {
+          q1: "What are the features of Earth's rotation? How long does one rotation take? Why does day/night change occur? Differences in daylight duration in summer/winter in Russia?",
+          q2: "Composition of Russia's electric power industry? Features and share of main types of power plants?",
+          practice: "Migration growth of Crimea in 2020 if 56.0 thousand arrived and 46.1 thousand left?",
+          criteria: "CRITERIA: Theory (0-3), Practical (0-2). Max 8 pts."
+        }
+      }
+    ];
+
+    function renderStructureCards() {
+      document.getElementById("structureGrid").innerHTML = structureCards.map(card => {
+        let body = "";
+        if (card.items) body = `<ul class="mini-list">${card.items.map(it => `<li>${escapeHtml(loc(it))}</li>`).join("")}</ul>`;
+        return `<article class="card ${card.cardClass}">
+          <span class="tag ${card.tagClass}">${escapeHtml(loc(card.tag))}</span>
+          <h3>${escapeHtml(loc(card.title))}</h3>
+          ${body}
+        </article>`;
+      }).join("");
+    }
+
+    function renderTopicsCards() {
+      document.getElementById("topicsGrid").innerHTML = topicsCards.map(t => {
+        const studied = topicsState[t.key] ? "studied" : "";
+        const btnLabel = topicsState[t.key] ? "✓ Изучено" : "Отметить";
+        return `<article class="card topic-card ${studied}">
+          <h3>${escapeHtml(loc(t.title))}</h3>
+          <p>${escapeHtml(loc(t.text))}</p>
+          <button class="btn small" onclick="toggleTopic('${t.key}')">${btnLabel}</button>
+        </article>`;
+      }).join("");
+    }
+
+    function renderChecklist() {
+      document.getElementById("checklistUl").innerHTML = checklistItems.map(item => {
+        const checked = checklistState[item.key] ? "checked" : "";
+        const done = checklistState[item.key] ? "done" : "";
+        return `<li class="check-item ${done}">
+          <input type="checkbox" id="${item.key}" data-key="${item.key}" ${checked} />
+          <label for="${item.key}">${escapeHtml(loc(item.label))}</label>
+        </li>`;
+      }).join("");
+    }
+
+    function renderPlan() {
+      const L = I18N[currentLang];
+      document.getElementById("planGrid").innerHTML = planDays.map(d => `
+        <div class="day ${d.critical ? "critical" : ""}">
+          <b>${escapeHtml(L.dayPrefix)} ${d.day}</b>
+          <p>${escapeHtml(loc(d.text))}</p>
+        </div>
+      `).join("");
+    }
+
+    function renderReferences() {
+      document.getElementById("refsGrid").innerHTML = `
+        <div class="card success-card">
+          <h3>Критерии письменной части</h3>
+          <table class="reference-table">
+            <tr><th>Задание</th><th>Балл</th></tr>
+            <tr><td>1–17 (краткий ответ)</td><td>0–1</td></tr>
+            <tr><td>18 (развёрнутое)</td><td>0–1</td></tr>
+            <tr><td>19 (развёрнутое)</td><td>0–1</td></tr>
+            <tr><td><strong>Максимум за работу</strong></td><td><strong>19</strong></td></tr>
+          </table>
+        </div>
+        <div class="card warn-card">
+          <h3>Критерии устной формы</h3>
+          <table class="reference-table">
+            <tr><th>Критерий</th><th>Балл</th></tr>
+            <tr><td>Теория (полный ответ)</td><td>0–3</td></tr>
+            <tr><td>Практика (верный расчёт)</td><td>0–2</td></tr>
+            <tr><td><strong>Максимум за билет (2 вопроса + практика)</strong></td><td><strong>8</strong></td></tr>
+          </table>
+        </div>
+        <div class="card danger-card">
+          <h3>Шкала перевода (устная форма)</h3>
+          <table class="reference-table">
+            <tr><th>Отметка</th><th>Баллы</th></tr>
+            <tr><td>«2»</td><td>0–2</td></tr>
+            <tr><td>«3»</td><td>3–4</td></tr>
+            <tr><td>«4»</td><td>5–6</td></tr>
+            <tr><td>«5»</td><td>7–8</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Шкала перевода (письменная форма)</h3>
+          <table class="reference-table">
+            <tr><th>Отметка</th><th>Баллы</th></tr>
+            <tr><td>«2»</td><td>0–5</td></tr>
+            <tr><td>«3»</td><td>6–10</td></tr>
+            <tr><td>«4»</td><td>11–15</td></tr>
+            <tr><td>«5»</td><td>16–19</td></tr>
+          </table>
+        </div>
+      `;
+    }
+
+    function renderOral() {
+      const container = document.getElementById("oralContainer");
+      const L = I18N[currentLang];
+      container.innerHTML = oralTasks.map(t => {
+        const tr = t[currentLang];
+        return `
+          <article class="manual-card">
+            <span class="tag red">${escapeHtml(L.oralTag)}</span>
+            <h3>${escapeHtml(L.oralTaskPrefix)} №${t.n}</h3>
+            <div class="q-part-label">Вопрос 1 (макс. 3 балла)</div>
+            <div class="q-text">${escapeHtml(tr.q1)}</div>
+            <div class="q-part-label" style="margin-top:14px;">Вопрос 2 (макс. 3 балла)</div>
+            <div class="q-text">${escapeHtml(tr.q2)}</div>
+            <div class="q-part-label" style="margin-top:14px;">Практическое задание (макс. 2 балла)</div>
+            <div class="q-text">${escapeHtml(tr.practice)}</div>
+            <div class="answer-hint">${escapeHtml(tr.criteria).replace(/\n/g, "<br/>")}</div>
+            <div class="check-input">
+              <label>${escapeHtml(L.oralSelfLabel)}</label>
+              <textarea data-oral="${t.n}" placeholder="${escapeHtml(L.oralPlaceholder)}">${escapeHtml(oralNotes[t.n] || "")}</textarea>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function levelLabel(level) {
+      const L = I18N[currentLang];
+      return L["level" + level.replace("v", "")] || level;
+    }
+    function sourceLabel(q) {
+      const L = I18N[currentLang];
+      const tpl = L["source" + (q.level === "part1" ? "Part1" : "Part2")] || "GVE-9 2027, task {task}";
+      return tpl.replace("{task}", q.task);
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById("quizContainer");
+      const L = I18N[currentLang];
+      container.innerHTML = "";
+      quiz.forEach(q => {
+        const block = document.createElement("div");
+        block.className = "question-block";
+        block.id = "q" + q.id;
+        
+        let trainerHtml = "";
+        if (q.type === "single") {
+          let opts = "";
+          q.options.forEach((opt, idx) => {
+            opts += `<button class="option" data-q="${q.id}" data-idx="${idx}" data-value="${escapeHtml(opt)}" onclick="handleAnswer(${q.id}, ${idx})">${escapeHtml(opt)}</button>`;
+          });
+          trainerHtml = `<div class="options" id="options-${q.id}">${opts}</div>`;
+        } else if (q.type === "match") {
+          trainerHtml = `
+            <div class="match-input-row">
+              <input type="text" id="match-${q.id}" maxlength="30" placeholder="${escapeHtml(L.matchPlaceholder)}" value="${escapeHtml(savedAnswers[q.id] || "")}" />
+              <button class="btn small" onclick="handleMatch(${q.id})">${escapeHtml(L.matchCheck)}</button>
+            </div>
+          `;
+        } else if (q.type === "long") {
+          trainerHtml = `
+            <div class="writing-area">
+              <textarea id="solution_${q.id}" data-qid="${q.id}" placeholder="Напиши решение здесь...">${escapeHtml(savedAnswers["solution_" + q.id] || "")}</textarea>
+            </div>
+            <div style="margin-top:10px;">
+              <button class="btn small secondary" onclick="toggleSolution(${q.id})">${escapeHtml(L.showSolution)}</button>
+            </div>
+          `;
+        }
+
+        const tr = q[currentLang];
+        
+        block.innerHTML = `
+          <div class="q-number">${escapeHtml(levelLabel(q.level))}, ${currentLang === "ru" ? "задание" : "task"} ${q.task}</div>
+          <div class="q-part">
+            <span class="q-part-label">${escapeHtml(L.questionLabel1)}</span>
+            <div class="q-text">${escapeHtml(tr.text)}</div>
+          </div>
+          <div class="q-info">
+            <span class="q-part-label" style="color:var(--accent);">${escapeHtml(L.questionLabel2)}</span>
+            <p style="margin:0;">${escapeHtml(tr.info)}</p>
+          </div>
+          <div class="q-part">
+            <span class="q-trainer-label">${escapeHtml(L.questionLabel3)}</span>
+            ${trainerHtml}
+          </div>
+          <div id="result-${q.id}"></div>
+        `;
+        container.appendChild(block);
+      });
+      
+      container.querySelectorAll("textarea[data-qid]").forEach(ta => {
+        ta.addEventListener("input", e => {
+          const qid = e.target.dataset.qid;
+          savedAnswers["solution_" + qid] = e.target.value;
+          updateStats();
+        });
+      });
+      
+      quiz.forEach(q => {
+        if (savedAnswers[q.id] !== undefined && q.type === "single") {
+          applyAnswerVisual(q, savedAnswers[q.id]);
+          showResult(q, savedAnswers[q.id]);
+        }
+        if (savedAnswers[q.id] !== undefined && q.type === "match") {
+          showMatchResult(q, savedAnswers[q.id]);
+        }
+      });
+      
+      updateFilterLabels();
+      applyFilter();
+      updateStats();
+      updateSummary();
+    }
+
+    function handleAnswer(qId, selectedIdx) {
+      const q = quiz.find(item => item.id === qId);
+      if (!q || savedAnswers[qId] !== undefined) return;
+      const selectedValue = q.options[selectedIdx];
+      savedAnswers[qId] = selectedValue;
+      applyAnswerVisual(q, selectedValue);
+      showResult(q, selectedValue);
+      updateStats();
+      updateSummary();
+    }
+
+    function normalizeInput(str) {
+      return String(str || "").trim().toLowerCase().replace(/ё/g, "е").replace(/[\s,;.\-–—]/g, "");
+    }
+
+    function handleMatch(qId) {
+      const q = quiz.find(item => item.id === qId);
+      if (!q) return;
+      const input = document.getElementById("match-" + qId);
+      const value = normalizeInput(input.value);
+      savedAnswers[qId] = value;
+      showMatchResult(q, value);
+      updateStats();
+      updateSummary();
+    }
+
+    function showMatchResult(q, value) {
+      const resultBox = document.getElementById("result-" + q.id);
+      if (!resultBox) return;
+      const L = I18N[currentLang];
+      const nv = normalizeInput(value);
+      const nc = normalizeInput(q.correctMatch);
+      const isCorrect = nv === nc;
+      resultBox.innerHTML = `
+        <div class="result-block ${isCorrect ? "correct" : "wrong"}">
+          <div class="verdict ${isCorrect ? "correct" : "wrong"}">${escapeHtml(isCorrect ? L.resultCorrect : L.resultWrong)}</div>
+          <div class="result-row"><strong>${escapeHtml(L.correctAnswer)}</strong> ${escapeHtml(q.correctMatch)}</div>
+          <div class="result-row"><strong>${escapeHtml(L.explanation)}</strong> ${escapeHtml(q[currentLang].explanation).replace(/\n/g, "<br/>")}</div>
+          <div class="source-row"><strong>${escapeHtml(L.source)}</strong> ${escapeHtml(sourceLabel(q))}</div>
+        </div>`;
+    }
+
+    function toggleSolution(qId) {
+      const q = quiz.find(item => item.id === qId);
+      if (!q) return;
+      const resultBox = document.getElementById("result-" + qId);
+      const L = I18N[currentLang];
+      const isHidden = !resultBox.innerHTML || resultBox.innerHTML.trim() === "";
+      if (isHidden) {
+        resultBox.innerHTML = `
+          <div class="result-block correct">
+            <div class="verdict correct">📖 ${escapeHtml(L.explanation)}</div>
+            <div class="result-row" style="white-space:pre-wrap;">${escapeHtml(q[currentLang].explanation)}</div>
+          </div>`;
+      } else {
+        resultBox.innerHTML = "";
+      }
+      updateStats();
+      updateSummary();
+    }
+
+    function applyAnswerVisual(q, selectedValue) {
+      const optionsBox = document.getElementById("options-" + q.id);
+      if (!optionsBox) return;
+      const correctValue = q.options[q.correct];
+      optionsBox.querySelectorAll(".option").forEach(btn => {
+        btn.disabled = true;
+        const value = btn.dataset.value;
+        if (value === correctValue) btn.classList.add("correct");
+        if (value === selectedValue && selectedValue !== correctValue) btn.classList.add("wrong");
+      });
+    }
+
+    function showResult(q, selectedValue) {
+      const resultBox = document.getElementById("result-" + q.id);
+      if (!resultBox) return;
+      const L = I18N[currentLang];
+      const tr = q[currentLang];
+      const correctValue = q.options[q.correct];
+      const isCorrect = selectedValue === correctValue;
+      resultBox.innerHTML = `
+        <div class="result-block ${isCorrect ? "correct" : "wrong"}">
+          <div class="verdict ${isCorrect ? "correct" : "wrong"}">${escapeHtml(isCorrect ? L.resultCorrect : L.resultWrong)}</div>
+          <div class="result-row"><strong>${escapeHtml(L.correctAnswer)}</strong> ${escapeHtml(correctValue)}</div>
+          <div class="result-row"><strong>${escapeHtml(L.explanation)}</strong> ${escapeHtml(tr.explanation)}</div>
+          <div class="source-row"><strong>${escapeHtml(L.source)}</strong> ${escapeHtml(sourceLabel(q))}</div>
+        </div>`;
+    }
+
+    function setFilter(filter, btn) {
+      currentFilter = filter;
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      if (btn) btn.classList.add("active");
+      applyFilter();
+    }
+    function applyFilter() {
+      quiz.forEach(q => {
+        const block = document.getElementById("q" + q.id);
+        if (!block) return;
+        let show = true;
+        if (currentFilter === "part1") show = q.level === "part1";
+        else if (currentFilter === "part2") show = q.level === "part2";
+        block.style.display = show ? "" : "none";
+      });
+    }
+    function updateFilterLabels() {
+      const L = I18N[currentLang];
+      const cPart1 = quiz.filter(q => q.level === "part1").length;
+      const cPart2 = quiz.filter(q => q.level === "part2").length;
+      document.getElementById("filterAll").textContent = `${L.filterAll} (${quiz.length})`;
+      document.getElementById("filterPart1").textContent = `${L.filterPart1} (${cPart1})`;
+      document.getElementById("filterPart2").textContent = `${L.filterPart2} (${cPart2})`;
+    }
+
+    function toggleTopic(key) {
+      topicsState[key] = !topicsState[key];
+      saveAll();
+      renderTopicsCards();
+      updateStats();
+    }
+
+    function isQuestionAnswered(q) {
+      if (q.type === "single") {
+        const saved = savedAnswers[q.id];
+        return typeof saved === "string" && q.options.includes(saved);
+      }
+      if (q.type === "match") {
+        return typeof savedAnswers[q.id] === "string" && savedAnswers[q.id].length > 0;
+      }
+      if (q.type === "long") {
+        return !!savedAnswers["solution_" + q.id];
+      }
+      return false;
+    }
+    function isQuestionCorrect(q) {
+      if (q.type === "single") {
+        const saved = savedAnswers[q.id];
+        return typeof saved === "string" && q.options.includes(saved) && saved === q.options[q.correct];
+      }
+      if (q.type === "match") {
+        const saved = savedAnswers[q.id];
+        if (typeof saved !== "string" || !saved) return false;
+        return normalizeInput(saved) === normalizeInput(q.correctMatch);
+      }
+      return false;
+    }
+
+    function updateStats() {
+      const total = quiz.length;
+      let answered = 0, correct = 0;
+      quiz.forEach(q => {
+        if (isQuestionAnswered(q)) answered++;
+        if (isQuestionCorrect(q)) correct++;
+      });
+      document.getElementById("answeredCount").textContent = answered + "/" + total;
+      document.getElementById("correctCount").textContent = correct;
+      const clDone = checklistItems.filter(i => checklistState[i.key]).length;
+      const clPct = Math.round((clDone / checklistItems.length) * 100);
+      document.getElementById("checklistProgress").textContent = clPct + "%";
+      const overall = Math.round((answered / total * 100 + clPct) / 2);
+      document.getElementById("overall").value = overall;
+    }
+
+    function updateSummary() {
+      const box = document.getElementById("summaryBox");
+      const L = I18N[currentLang];
+      const total = quiz.length;
+      let answered = 0, correct = 0, totalGraded = 0;
+      quiz.forEach(q => {
+        if (isQuestionAnswered(q)) {
+          answered++;
+          if (q.type !== "long") {
+            totalGraded++;
+            if (isQuestionCorrect(q)) correct++;
+          }
+        }
+      });
+      if (answered < total) {
+        box.innerHTML = `<div class="summary">
+          <p style="margin:0;color:var(--muted);">${escapeHtml(L.summaryAnswered)} <strong>${answered}</strong> ${escapeHtml(L.summaryOf)} ${total}</p>
+          <p style="margin:8px 0 0;color:var(--muted);">${escapeHtml(L.summaryCorrect)} <strong>${correct}</strong> (из ${totalGraded} автопроверяемых)</p>
+          <p style="margin:8px 0 0;color:var(--muted);font-size:14px;">${escapeHtml(L.summaryFinish)}</p>
+        </div>`;
+        return;
+      }
+      const pct = totalGraded ? Math.round((correct / totalGraded) * 100) : 0;
+      const verdict = pct >= 85 ? L.verdictExcellent : pct >= 60 ? L.verdictGood : L.verdictNeeds;
+      box.innerHTML = `<div class="summary">
+        <div class="score">${correct}/${totalGraded}</div>
+        <p style="margin:8px 0;">${escapeHtml(verdict)}</p>
+        <p style="color:var(--muted);margin:0;">${escapeHtml(L.summaryCorrect)} ${pct}%</p>
+      </div>`;
+    }
+
+    function resetAll() {
+      if (!confirm(I18N[currentLang].resetConfirm)) return;
+      savedAnswers = {};
+      oralNotes = {};
+      renderQuestions();
+      renderOral();
+      updateStats();
+      updateSummary();
+    }
+
+    function applyUIText() {
+      const L = I18N[currentLang];
+      document.title = L.docTitle;
+      document.documentElement.lang = currentLang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (L[key] != null) el.innerHTML = L[key];
+      });
+    }
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(STORAGE.lang, lang);
+      document.querySelectorAll(".lang-option").forEach(sp => sp.classList.toggle("active", sp.dataset.lang === lang));
+      applyUIText();
+      renderAll();
+    }
+
+    function renderAll() {
+      renderStructureCards();
+      renderTopicsCards();
+      renderQuestions();
+      renderOral();
+      renderReferences();
+      renderChecklist();
+      renderPlan();
+      updateStats();
+      updateSummary();
+    }
+
+    let timerTotal = 120 * 60, timerRemaining = timerTotal, timerInterval = null, timerRunning = false;
+    function formatTime(sec) {
+      const h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60;
+      return [h, m, s].map(v => String(v).padStart(2, "0")).join(":");
+    }
+    function updateTimerDisplay() {
+      const display = document.getElementById("timerDisplay");
+      const widget = document.getElementById("timerWidget");
+      display.textContent = formatTime(timerRemaining);
+      widget.classList.toggle("warning", timerRemaining <= 300 && timerRemaining > 60);
+      widget.classList.toggle("danger", timerRemaining <= 60);
+    }
+    function updateTimerButton() {
+      const L = I18N[currentLang];
+      const btn = document.getElementById("timerToggle");
+      btn.textContent = timerRunning ? "⏸" : "▶";
+      btn.setAttribute("title", timerRunning ? L.timerPause : L.timerStart);
+    }
+    function stopTimer() { timerRunning = false; if (timerInterval) clearInterval(timerInterval); timerInterval = null; updateTimerButton(); }
+    function startTimer() {
+      if (timerRunning || timerRemaining <= 0) return;
+      timerRunning = true;
+      timerInterval = setInterval(() => {
+        if (timerRemaining > 0) { timerRemaining--; updateTimerDisplay(); }
+        if (timerRemaining === 0) { stopTimer(); alert(I18N[currentLang].timerUp); }
+      }, 1000);
+      updateTimerButton();
+    }
+    function toggleTimer() { timerRunning ? stopTimer() : startTimer(); }
+    function resetTimer() { stopTimer(); timerRemaining = timerTotal; updateTimerDisplay(); }
+    function updateTimerLabels() {
+      const L = I18N[currentLang];
+      const preset = document.getElementById("timerPreset");
+      const selected = preset.value;
+      const presets = [
+        { seconds: 120 * 60, key: "timerBasic" },
+        { seconds: 60 * 60, key: "timerPractice" }
+      ];
+      preset.innerHTML = presets.map(p => `<option value="${p.seconds}">${escapeHtml(L[p.key])}</option>`).join("");
+      if (selected && presets.some(p => String(p.seconds) === selected)) preset.value = selected;
+      else preset.value = String(timerTotal);
+    }
+
+    function copyPhone() {
+      const phone = "89202275676";
+      const status = document.getElementById("copyStatus");
+      const L = I18N[currentLang];
+      const show = () => { status.textContent = L.copied; setTimeout(() => status.textContent = "", 2500); };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(phone).then(show).catch(() => fallbackCopy(phone, show));
+      } else fallbackCopy(phone, show);
+    }
+    function fallbackCopy(text, cb) {
+      const t = document.createElement("textarea");
+      t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+      document.body.appendChild(t); t.focus(); t.select();
+      try { document.execCommand("copy"); cb(); } catch (e) { alert(I18N[currentLang].copyFail + text); }
+      document.body.removeChild(t);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadAll();
+      applyTheme();
+      applyUIText();
+      renderAll();
+      updateTimerLabels();
+      updateTimerDisplay();
+
+      document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+      document.getElementById("langToggle").addEventListener("click", () => {
+        setLang(currentLang === "ru" ? "en" : "ru");
+      });
+      document.getElementById("timerToggle").addEventListener("click", toggleTimer);
+      document.getElementById("timerReset").addEventListener("click", resetTimer);
+      document.getElementById("timerPreset").addEventListener("change", e => {
+        timerTotal = parseInt(e.target.value, 10);
+        resetTimer();
+      });
+      document.getElementById("checklistUl").addEventListener("change", e => {
+        if (e.target.matches("input[type='checkbox']")) {
+          const key = e.target.dataset.key;
+          checklistState[key] = e.target.checked;
+          saveAll();
+          const li = e.target.closest(".check-item");
+          if (li) li.classList.toggle("done", e.target.checked);
+          updateStats();
+        }
+      });
+      document.getElementById("oralContainer").addEventListener("input", e => {
+        if (e.target.matches("textarea[data-oral]")) {
+          oralNotes[e.target.dataset.oral] = e.target.value;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
